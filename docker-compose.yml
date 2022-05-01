@@ -1,0 +1,27 @@
+version: "2"
+services:
+  api:
+    container_name: eversana-api
+    image: eversana-api
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo
+    networks:
+      - eversana
+  mongo:
+    container_name: eversana-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - data-db:/data/db
+    networks:
+      - eversana
+volumes:
+  data-db:
+networks:
+  eversana:

@@ -1,0 +1,45 @@
+{
+  "name": "vb-cms-backend",
+  "version": "1.0.102",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "DEBUG=true nyc mocha ./test/*.test.js --exit --insepect=0.0.0.0:3201 --timeout 150000",
+    "swagger-autogen": "node swagger.js",
+    "start": "npm run swagger-autogen && nodemon app.js"
+  },
+  "keywords": [
+    "cms",
+    "headless cms"
+  ],
+  "author": "Valuebound LLP",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "for-own": "^1.0.0",
+    "group-array": "^1.0.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.7.0",
+    "puppeteer": "^13.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.3.2",
+    "swagger-autogen": "^2.11.2",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "faker": "^5.5.3",
+    "mocha": "^9.0.3",
+    "nodemon": "^2.0.12",
+    "nyc": "^15.1.0"
+  }
+}
